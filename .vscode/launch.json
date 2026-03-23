@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost",
+            "serverInstance": "BC210",
+            "authentication": "Windows",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "launchBrowser": true,
+            "schemaUpdateMode": "Synchronize",//Synchronize/ForceSync//Recreate
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "default",
+            "usePublicURLFromServer": true
+        }
+    ]
+}
