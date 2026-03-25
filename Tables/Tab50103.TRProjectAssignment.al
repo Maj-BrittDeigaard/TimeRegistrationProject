@@ -8,16 +8,17 @@ table 50103 TRProjectAssignment
 
     fields
     {
-        field(1; ""; )
+        field(1; ""; Text[100])
         {
             Caption = '';
         }
     }
-    keys
+    /*keys
     {
         key(PK; "")
         {
             Clustered = true;
         }
     }
+    */
 }
