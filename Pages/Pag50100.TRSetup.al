@@ -1,9 +1,13 @@
+// Page for configuring system setup
+// Allows selection of No. Series for projects
+// Used by system to generate project numbers
 page 50100 TRSetup
 {
     ApplicationArea = All;
     Caption = 'TRSetup';
     PageType = Card;
     SourceTable = TRSetup;
+    UsageCategory = Administration;
 
     layout
     {
@@ -15,17 +19,10 @@ page 50100 TRSetup
 
                 field("Primary Key"; Rec."Primary Key")
                 {
-                    ToolTip = 'Specifies the value of the Primary Key field.', Comment = '%';
                     ApplicationArea = All;
                 }
                 field("Project Nos."; Rec."Project Nos.")
                 {
-                    ToolTip = 'Specifies the value of the Project Nos. field.', Comment = '%';
-                    ApplicationArea = All;
-                }
-                field("Time Entry Nos."; Rec."Time Entry Nos.")
-                {
-                    ToolTip = 'Specifies the value of the Time Entry Nos. field.', Comment = '%';
                     ApplicationArea = All;
                 }
             }

@@ -1,8 +1,10 @@
+// Stores system configuration
+// Contains No. Series setup for projects
+// Used to control automatic numbering
 table 50100 TRSetup
 {
     Caption = 'TRSetup';
-    DataClassification = ToBeClassified;
-    //DataClassification = CustomerContent;
+    DataClassification = CustomerContent;
 
 
     fields
@@ -14,11 +16,6 @@ table 50100 TRSetup
         field(5; "Project Nos."; Code[20])
         {
             Caption = 'Project Nos.';
-            TableRelation = "No. Series".Code;
-        }
-        field(10; "Time Entry Nos."; Code[20])
-        {
-            Caption = 'Time Entry Nos.';
             TableRelation = "No. Series".Code;
         }
     }
