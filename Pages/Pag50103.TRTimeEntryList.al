@@ -5,7 +5,7 @@
 page 50103 TRTimeEntryList
 {
     ApplicationArea = All;
-    Caption = 'TRTimeEntryList';
+    Caption = 'TR Time Entry List';
     PageType = Card;
 
     layout

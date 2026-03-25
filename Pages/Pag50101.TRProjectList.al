@@ -4,17 +4,42 @@
 page 50101 TRProjectList
 {
     ApplicationArea = All;
-    Caption = 'TRProjectList';
-    PageType = Card;
+    Caption = 'TR Project List';
+    PageType = List;
+    SourceTable = TRProject;
+    UsageCategory = Lists;
+    CardPageId = TRProjectCard;
 
     layout
     {
         area(Content)
         {
-            group(General)
+            repeater(General)
             {
-                Caption = 'General';
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                }
 
+                field("Project Name"; Rec."Project Name")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Estimated Hours"; Rec."Estimated Hours")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Used Hours"; Rec."Used Hours")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Remaining Hours"; Rec."Remaining Hours")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

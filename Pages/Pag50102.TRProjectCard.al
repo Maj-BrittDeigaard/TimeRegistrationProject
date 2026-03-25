@@ -4,8 +4,10 @@
 page 50102 TRProjectCard
 {
     ApplicationArea = All;
-    Caption = 'TRProjectCard';
+    Caption = 'TR Project Card';
     PageType = Card;
+    SourceTable = TRProject;
+    UsageCategory = Documents;
 
     layout
     {
@@ -15,6 +17,48 @@ page 50102 TRProjectCard
             {
                 Caption = 'General';
 
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Project Name"; Rec."Project Name")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Estimated Hours"; Rec."Estimated Hours")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Used Hours"; Rec."Used Hours")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Remaining Hours"; Rec."Remaining Hours")
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action(PostProject)
+            {
+                Caption = 'Post Project';
+                ApplicationArea = All;
+                Image = Post;
+
+                trigger OnAction()
+                begin
+                    //TODO: Call posting codeunit here
+                    Message('Project posting will be implemented later')
+                end;
             }
         }
     }

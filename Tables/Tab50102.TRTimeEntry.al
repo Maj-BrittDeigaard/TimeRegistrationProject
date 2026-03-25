@@ -3,7 +3,7 @@
 // Contains posted flag for processing status
 table 50102 TRTimeEntry
 {
-    Caption = 'TRTimeEntry';
+    Caption = 'TR Time Entry';
     DataClassification = ToBeClassified;
 
     fields

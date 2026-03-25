@@ -3,7 +3,7 @@
 // Used to control automatic numbering
 table 50100 TRSetup
 {
-    Caption = 'TRSetup';
+    Caption = 'TR Setup';
     DataClassification = CustomerContent;
 
 

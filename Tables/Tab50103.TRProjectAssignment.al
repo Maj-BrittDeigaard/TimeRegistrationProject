@@ -3,7 +3,7 @@
 // Used for filtering project selection
 table 50103 TRProjectAssignment
 {
-    Caption = 'TRProjectAssignment';
+    Caption = 'TR Project Assignment';
     DataClassification = ToBeClassified;
 
     fields

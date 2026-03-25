@@ -4,7 +4,7 @@
 page 50104 TRPostedProjectList
 {
     ApplicationArea = All;
-    Caption = 'TRPostedProjectList';
+    Caption = 'TR Posted Project List';
     PageType = Card;
 
     layout

@@ -3,7 +3,7 @@
 // Used after project is closed
 table 50104 TRPostedProject
 {
-    Caption = 'TRPostedProject';
+    Caption = 'TR Posted Project';
     DataClassification = ToBeClassified;
 
     fields

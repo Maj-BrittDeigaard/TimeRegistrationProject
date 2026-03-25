@@ -4,7 +4,7 @@
 page 50100 TRSetup
 {
     ApplicationArea = All;
-    Caption = 'TRSetup';
+    Caption = 'TR Setup';
     PageType = Card;
     SourceTable = TRSetup;
     UsageCategory = Administration;
