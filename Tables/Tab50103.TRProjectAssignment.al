@@ -8,7 +8,7 @@ table 50103 TRProjectAssignment
 
     fields
     {
-        field(1; "Entry No. "; Text[100])
+        field(1; "Entry No. "; Code[20])
         {
             Caption = 'Entry number';
         }
