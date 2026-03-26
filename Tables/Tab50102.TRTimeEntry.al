@@ -8,6 +8,7 @@ table 50102 TRTimeEntry
     DataClassification = ToBeClassified;
 
 
+
     fields
     {
         field(1; "Entry No."; Integer)
@@ -52,4 +53,15 @@ table 50102 TRTimeEntry
             Clustered = true;
         }
     }
+    trigger OnInsert()
+    var
+        Employee: Record Employee;
+    begin
+        Employee.SetRange("BC User ID", UserId());
+
+        if Employee.FindFirst() then
+            "Employee No." := Employee."No."
+        else
+            Error('No employee is linked to the current user %1.', UserId());
+    end;
 }

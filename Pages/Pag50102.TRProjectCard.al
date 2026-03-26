@@ -55,9 +55,12 @@ page 50102 TRProjectCard
                 Image = Post;
 
                 trigger OnAction()
+                var
+                    ProjectPosting: Codeunit TRProjectPosting;
                 begin
-                    //TODO: Call posting codeunit here
-                    Message('Project posting will be implemented later')
+                    ProjectPosting.PostProject(Rec."Project No.");
+                    Message('Project %1 has been posted.', Rec."Project No.");
+                    CurrPage.Close();
                 end;
             }
         }
