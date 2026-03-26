@@ -1,7 +1,7 @@
 // Links employees to projects (many-to-many)
 // Controls which employees can register time on which projects
 // Used for filtering project selection
-table 50103 TRProjectAssignment
+/*table 50103 TRProjectAssignment
 {
     Caption = 'TR Project Assignment';
     DataClassification = ToBeClassified;
@@ -20,5 +20,5 @@ table 50103 TRProjectAssignment
             Clustered = true;
         }
     }
-    */
-}
+    
+}*/

@@ -1,7 +1,7 @@
 // Stores completed/posted projects
 // Contains historical project data
 // Used after project is closed
-table 50104 TRPostedProject
+/*table 50104 TRPostedProject
 {
     Caption = 'TR Posted Project';
     DataClassification = ToBeClassified;
@@ -20,5 +20,5 @@ table 50104 TRPostedProject
             Clustered = true;
         }
     }
-    */
-}
+    
+}*/
