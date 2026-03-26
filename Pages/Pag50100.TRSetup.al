@@ -1,7 +1,7 @@
 // Page for configuring system setup
 // Allows selection of No. Series for projects
 // Used by system to generate project numbers
-page 50100 TRSetup
+page 50105 TRSetup
 {
     ApplicationArea = All;
     Caption = 'TR Setup';
