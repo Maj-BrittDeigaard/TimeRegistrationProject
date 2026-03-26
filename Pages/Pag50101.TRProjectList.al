@@ -16,7 +16,7 @@ page 50101 TRProjectList
         {
             repeater(General)
             {
-                field("No."; Rec."No.")
+                field("No."; Rec."Project No.")
                 {
                     ApplicationArea = All;
                 }

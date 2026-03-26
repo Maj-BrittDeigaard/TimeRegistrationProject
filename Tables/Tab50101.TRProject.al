@@ -8,7 +8,7 @@ table 50101 TRProject
 
     fields
     {
-        field(1; "No."; Code[20])
+        field(1; "Project No."; Code[20])
         {
             Caption = 'No.';
         }
@@ -44,7 +44,7 @@ table 50101 TRProject
     }
     keys
     {
-        key(PK; "No.")
+        key(PK; "Project No.")
         {
             Clustered = true;
         }

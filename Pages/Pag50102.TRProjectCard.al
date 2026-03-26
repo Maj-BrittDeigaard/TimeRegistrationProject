@@ -17,7 +17,7 @@ page 50102 TRProjectCard
             {
                 Caption = 'General';
 
-                field("No."; Rec."No.")
+                field("No."; Rec."Project No.")
                 {
                     ApplicationArea = All;
                 }
