@@ -14,7 +14,7 @@
             "breakOnError": "All",
             "breakOnRecordWrite": "None",
             "launchBrowser": true,
-            "schemaUpdateMode": "Synchronize",//Synchronize/ForceSync//Recreate
+            "schemaUpdateMode": "ForceSync",
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "longRunningSqlStatementsThreshold": 500,
