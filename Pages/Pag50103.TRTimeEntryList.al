@@ -7,6 +7,8 @@ page 50103 TRTimeEntryList
     ApplicationArea = All;
     Caption = 'TR Time Entry List';
     PageType = Card;
+    SourceTable = TRTimeEntry;
+    UsageCategory = Administration;
 
     layout
     {
@@ -15,6 +17,12 @@ page 50103 TRTimeEntryList
             group(General)
             {
                 Caption = 'General';
+
+                field("Project No."; Rec."Project No.")
+                {
+
+                }
+
 
             }
         }
