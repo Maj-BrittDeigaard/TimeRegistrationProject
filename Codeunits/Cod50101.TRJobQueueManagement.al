@@ -5,7 +5,7 @@
 // Sends notification email via Email Scenario
 codeunit 50101 TRJobQueueManagement
 {
-trigger OnRun()
+    trigger OnRun()
     begin
         PostTimeEntries();
         SendNegativeHoursEmail();
