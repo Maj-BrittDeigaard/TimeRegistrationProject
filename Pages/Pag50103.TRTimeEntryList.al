@@ -22,6 +22,36 @@ page 50103 TRTimeEntryList
                 {
                     ToolTip = 'Select the project for this time entry. Only projects assigned to you will be shown.';
                     ApplicationArea = All;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        Project: Record TRProject;
+                        Assignment: Record TRProjectAssignment;
+                        ProjectFilter: Text;
+                    begin
+                        //Filter assignments to the current employee on the time entry
+                        Assignment.SetRange("Employee No.", Rec."Employee No.");
+
+                        //Build a filter containing all project numbers assigned to the employee
+                        if Assignment.FindSet() then begin
+                            repeat
+                                if ProjectFilter = '' then
+                                    ProjectFilter := Assignment."Project No."
+                                else
+                                    ProjectFilter := ProjectFilter + '|' + Assignment."Project No.";
+                            until Assignment.Next() = 0;
+
+                            //Apply the project filter so only assigned projects are shown
+                            Project.SetFilter("Project No.", ProjectFilter);
+                        end else
+                            Error('No projects are assigned to employee %1.', Rec."Employee No.");
+
+                        //Open the project list as a lookup and return the selected project number
+                        if Page.RunModal(Page::TRProjectList, Project) = Action::LookupOK then
+                            Rec."Project No." := Project."Project No.";
+
+                        exit(true);
+                    end;
                 }
 
                 field("Work Date"; Rec."Work Date")

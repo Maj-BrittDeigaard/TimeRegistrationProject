@@ -8,18 +8,18 @@ table 50103 TRProjectAssignment
 
     fields
     {
-        field(1; "Entry No. "; Code[20])
+        field(1; "Entry No."; Code[20])
         {
             Caption = 'Entry number';
         }
 
-        field(2; "Project No. "; Text[100])
+        field(2; "Project No."; Text[100])
         {
             Caption = 'Project number';
             TableRelation = TRProject."Project No.";
         }
 
-        field(3; "Employee No. "; Text[100])
+        field(3; "Employee No."; Code[20])
         {
             Caption = 'Employee number';
             TableRelation = Employee."No.";
@@ -28,7 +28,7 @@ table 50103 TRProjectAssignment
 
     keys
     {
-        key(PK; "Entry No. ")
+        key(PK; "Entry No.")
         {
             Clustered = true;
         }
