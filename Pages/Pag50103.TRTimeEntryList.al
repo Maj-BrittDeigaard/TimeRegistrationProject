@@ -20,7 +20,6 @@ page 50103 TRTimeEntryList
 
                 field("Project No."; Rec."Project No.")
                 {
-                    ToolTip = 'Select the project for this time entry. Only projects assigned to you will be shown.';
                     ApplicationArea = All;
 
                     trigger OnLookup(var Text: Text): Boolean
@@ -29,10 +28,8 @@ page 50103 TRTimeEntryList
                         Assignment: Record TRProjectAssignment;
                         ProjectFilter: Text;
                     begin
-                        //Filter assignments to the current employee on the time entry
                         Assignment.SetRange("Employee No.", Rec."Employee No.");
 
-                        //Build a filter containing all project numbers assigned to the employee
                         if Assignment.FindSet() then begin
                             repeat
                                 if ProjectFilter = '' then
@@ -41,17 +38,18 @@ page 50103 TRTimeEntryList
                                     ProjectFilter := ProjectFilter + '|' + Assignment."Project No.";
                             until Assignment.Next() = 0;
 
-                            //Apply the project filter so only assigned projects are shown
                             Project.SetFilter("Project No.", ProjectFilter);
                         end else
                             Error('No projects are assigned to employee %1.', Rec."Employee No.");
 
-                        //Open the project list as a lookup and return the selected project number
-                        if Page.RunModal(Page::TRProjectList, Project) = Action::LookupOK then
-                            Rec."Project No." := Project."Project No.";
+                        if Page.RunModal(Page::TRProjectList, Project) = Action::LookupOK then begin
+                            Rec.Validate("Project No.", Project."Project No.");
+                            CurrPage.Update();
+                        end;
 
                         exit(true);
                     end;
+
                 }
 
                 field("Work Date"; Rec."Work Date")
@@ -71,6 +69,11 @@ page 50103 TRTimeEntryList
                     ToolTip = 'This is the employee number for the logged-in user.';
                     ApplicationArea = All;
                     Editable = false; // Employee No. is set automatically based on the logged-in user
+                }
+
+                field(Posted; Rec.Posted)
+                {
+                    ApplicationArea = All;
                 }
             }
         }
