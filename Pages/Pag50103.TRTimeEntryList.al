@@ -6,7 +6,7 @@ page 50103 TRTimeEntryList
 {
     ApplicationArea = All;
     Caption = 'TR Time Entry List';
-    PageType = Card;
+    PageType = List;
     SourceTable = TRTimeEntry;
     UsageCategory = Administration;
 
@@ -14,7 +14,7 @@ page 50103 TRTimeEntryList
     {
         area(Content)
         {
-            group(General)
+            repeater(General)
             {
                 Caption = 'General';
 

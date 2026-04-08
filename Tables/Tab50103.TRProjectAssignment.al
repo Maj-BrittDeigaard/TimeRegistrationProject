@@ -8,12 +8,13 @@ table 50103 TRProjectAssignment
 
     fields
     {
-        field(1; "Entry No."; Code[20])
+        field(1; "Entry No."; Integer)
         {
             Caption = 'Entry number';
+            AutoIncrement = true;
         }
 
-        field(2; "Project No."; Text[100])
+        field(2; "Project No."; Code[20])
         {
             Caption = 'Project number';
             TableRelation = TRProject."Project No.";
