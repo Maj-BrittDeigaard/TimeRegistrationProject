@@ -21,6 +21,7 @@ codeunit 50101 TRJobQueueManagement
             repeat
                 if TRProject.Get(TRTimeEntry."Project No.") then begin
                     TRProject."Used Hours" += TRTimeEntry.Hours;
+                    TRProject."Remaining Hours" := TRProject."Estimated Hours" - TRProject."Used Hours";
                     TRProject.Modify();
                     TRTimeEntry.Posted := true;
                     TRTimeEntry.Modify();
