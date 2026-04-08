@@ -5,7 +5,7 @@
 table 50102 TRTimeEntry
 {
     Caption = 'TR Time Entry';
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
 
 
 

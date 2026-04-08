@@ -20,10 +20,12 @@ page 50105 TRSetup
                 field("Primary Key"; Rec."Primary Key")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the primary key for the setup record.';
                 }
                 field("Project Nos."; Rec."Project Nos.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifices the number series used for projects.';
                 }
             }
         }

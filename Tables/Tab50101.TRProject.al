@@ -4,7 +4,7 @@
 table 50101 TRProject
 {
     Caption = 'TR Project';
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -23,6 +23,7 @@ table 50101 TRProject
 
             trigger OnValidate()
             begin
+                //Recalculate remaining hours when estimated hours change
                 "Remaining Hours" := "Estimated Hours" - "Used Hours";
             end;
         }
@@ -32,6 +33,7 @@ table 50101 TRProject
             DecimalPlaces = 0 : 2;
             trigger OnValidate()
             begin
+                //Recalculate remaining hours when used hours change 
                 "Remaining Hours" := "Estimated Hours" - "Used Hours";
             end;
         }
@@ -51,8 +53,21 @@ table 50101 TRProject
     }
 
     trigger OnInsert()
+    var
+        TRSetup: Record TRSetup;
+        NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
-        //TODO: Add No. Series logic here
-        //For now, number can be entered manually 
+        //Only assign a number if Project No. is empty 
+        if "Project No." = '' then begin
+            //Get setup record
+            if not TRSetup.Get('SETUP') then
+                Error('TR Setup has not been created');
+
+            //Make sure a project number series is selected in setup 
+            TRSetup.TestField("Project Nos.");
+
+            //Get the next number from the selected No. Series 
+            "Project No." := NoSeriesMgt.GetNextNo(TRSetup."Project Nos.", Today(), true);
+        end
     end;
 }
